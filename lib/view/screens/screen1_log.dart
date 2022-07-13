@@ -16,7 +16,7 @@ class LogInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    size = MediaQuery.of(context).size;
+    double size = MediaQuery.of(context).size.width;
     return CupertinoPageScaffold(
         resizeToAvoidBottomInset: false,
         navigationBar: kingsman,
@@ -52,7 +52,7 @@ class LogInScreen extends StatelessWidget {
                   CupertinoButton(
                     color: const Color.fromARGB(147, 227, 237, 229),
                     onPressed: () {
-                      Get.to(HomePage());
+                      Get.to(const HomePage());
                     },
                     child: const Text(
                       "Sign In",
@@ -65,14 +65,14 @@ class LogInScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         'Do you have an account?\t',
                         style: TextStyle(color: CupertinoColors.white),
                       ),
                       CupertinoButton.filled(
-                          child: Text('data'),
+                          child: const Text('data'),
                           onPressed: () {
-                            Get.to(HomePage());
+                            Get.to(const HomePage());
                           })
                     ],
                   ),
