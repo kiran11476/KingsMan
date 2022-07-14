@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -51,16 +52,24 @@ class SignUpPage extends StatelessWidget {
                     style: TextStyle(color: CupertinoColors.white),
                   ),
                 ),
+                SizedBox(
+                  height: 100,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text(
                       'Do you have an account?',
                       style: TextStyle(color: CupertinoColors.white),
                     ),
-                    Text(
-                      'Sign In',
-                      style: TextStyle(color: CupertinoColors.activeBlue),
+                    TextButton(
+                      onPressed: () {
+                        Get.back();
+                      },
+                      child: Text(
+                        'Sign In',
+                        style: TextStyle(color: CupertinoColors.activeBlue),
+                      ),
                     ),
                   ],
                 ),

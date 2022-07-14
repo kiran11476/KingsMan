@@ -7,16 +7,43 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
-        child: carousel(),
+        child: Column(children: [
+          const Carousel(),
+          SizedBox(
+            width: double.infinity,
+            height: 200,
+            child: ListView.builder(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemCount: 15,
+              itemBuilder: (BuildContext context, int index) => Card(
+                color: Colors.black26,
+                child: Column(
+                  children: const [
+                    SizedBox(
+                      height: 100,
+                      width: 150,
+                      child: Image(
+                        image: NetworkImage(
+                            'https://financesonline.com/uploads/2014/07/cartier2.jpg'),
+                      ),
+                    ),
+                    Text('Shoe'),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ]),
       ),
     );
   }
 }
 
-class carousel extends StatelessWidget {
-  const carousel({
+class Carousel extends StatelessWidget {
+  const Carousel({
     Key? key,
   }) : super(key: key);
 
@@ -32,7 +59,7 @@ class carousel extends StatelessWidget {
             image: const DecorationImage(
               fit: BoxFit.cover,
               image: NetworkImage(
-                  'https://static.zara.net/photos///2022/V/0/1/p/8197/231/400/2/w/438/8197231400_6_1_1.jpg?ts=1646738706507'),
+                  'https://financesonline.com/uploads/2014/07/cartier2.jpg'),
               filterQuality: FilterQuality.high,
             ),
           ),

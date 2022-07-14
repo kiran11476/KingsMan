@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kingsman/view/screens/homepage.dart';
+import 'package:kingsman/view/screens/screen2_signup.dart';
 
 import 'package:kingsman/view/screens/widgets/background_image.dart';
 import 'package:kingsman/view/screens/widgets/widgets.dart';
@@ -16,7 +18,7 @@ class LogInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double size = MediaQuery.of(context).size.width;
+    size = MediaQuery.of(context).size;
     return CupertinoPageScaffold(
         resizeToAvoidBottomInset: false,
         navigationBar: kingsman,
@@ -69,11 +71,15 @@ class LogInScreen extends StatelessWidget {
                         'Do you have an account?\t',
                         style: TextStyle(color: CupertinoColors.white),
                       ),
-                      CupertinoButton.filled(
-                          child: const Text('data'),
-                          onPressed: () {
-                            Get.to(const HomePage());
-                          })
+                      TextButton(
+                        onPressed: () {
+                          Get.to(SignUpPage());
+                        },
+                        child: Text(
+                          'Sign In',
+                          style: TextStyle(color: CupertinoColors.activeBlue),
+                        ),
+                      ),
                     ],
                   ),
                 ],
