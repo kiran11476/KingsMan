@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kingsman/controller/cubit/bottom_nav_cubit.dart';
+import 'package:kingsman/view/screens/settings.dart';
 import 'package:kingsman/view/screens/ssssscreen.dart';
-import 'package:kingsman/view/screens/screen2_signup.dart';
+
+import 'package:kingsman/view/screens/wishlist.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,8 +13,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> pages = const [
       HomeScreen(),
-      SignUpPage(),
-      SignUpPage(),
+      ScreenWishList(),
+      ScreenSetting()
     ];
     return BlocBuilder<BottomNavCubit, Bottombutton>(
       builder: (context, state) {
@@ -23,10 +25,6 @@ class HomePage extends StatelessWidget {
               style: TextStyle(color: Colors.yellow),
             ),
             backgroundColor: Colors.black,
-            leading: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.arrow_back_ios_new),
-            ),
           ),
           body: pages[state.currentindex],
           bottomNavigationBar: BottomNavigationBar(
@@ -37,8 +35,8 @@ class HomePage extends StatelessWidget {
                 label: 'Home',
               ),
               BottomNavigationBarItem(
-                label: 'Wishlist',
-                icon: Icon(Icons.favorite),
+                label: 'Add to cart',
+                icon: Icon(Icons.shopping_cart_outlined),
               ),
               BottomNavigationBarItem(
                 label: 'Settings',
