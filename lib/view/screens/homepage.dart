@@ -1,109 +1,56 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
-import 'package:kingsman/view/screens/widgets/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kingsman/controller/cubit/bottom_nav_cubit.dart';
+import 'package:kingsman/view/screens/ssssscreen.dart';
+import 'package:kingsman/view/screens/screen2_signup.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      backgroundColor: Color.fromRGBO(38, 27, 61, .3),
-      navigationBar: kingsman,
-      child: SafeArea(
-        child: Column(children: [
-          const Carousel(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Color.fromARGB(123, 79, 48, 146)),
-                ),
-                onPressed: () {},
-                child: const Text('Shoes'),
+    List<Widget> pages = const [
+      HomeScreen(),
+      SignUpPage(),
+      SignUpPage(),
+    ];
+    return BlocBuilder<BottomNavCubit, Bottombutton>(
+      builder: (context, state) {
+        return Scaffold(
+          appBar: AppBar(
+            title: const Text(
+              'KingsMan',
+              style: TextStyle(color: Colors.yellow),
+            ),
+            backgroundColor: Colors.black,
+            leading: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.arrow_back_ios_new),
+            ),
+          ),
+          body: pages[state.currentindex],
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: state.currentindex,
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
               ),
-              ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Color.fromARGB(123, 79, 48, 146)),
-                ),
-                onPressed: () {},
-                child: const Text('Glasses'),
+              BottomNavigationBarItem(
+                label: 'Wishlist',
+                icon: Icon(Icons.favorite),
               ),
-              ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Color.fromARGB(123, 79, 48, 146)),
-                ),
-                onPressed: () {},
-                child: const Text('Watche'),
+              BottomNavigationBarItem(
+                label: 'Settings',
+                icon: Icon(Icons.settings),
               ),
             ],
+            onTap: (index) {
+              context.read<BottomNavCubit>().index(index);
+            },
           ),
-          SizedBox(
-            width: double.infinity,
-            height: 250,
-            child: ListView.builder(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemCount: 15,
-              itemBuilder: (BuildContext context, int index) => Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Card(
-                  child: Column(
-                    children: const [
-                      SizedBox(
-                        height: 100,
-                        width: 150,
-                        child: Image(
-                          image: NetworkImage(
-                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj7Vmct8uCO4MTxe6SPOTUG3BvJ9ghxq-fxw&usqp=CAU'),
-                        ),
-                      ),
-                      Text('Shoe'),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ]),
-      ),
-    );
-  }
-}
-
-class Carousel extends StatelessWidget {
-  const Carousel({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return CarouselSlider(
-      items: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            width: 400,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              image: const DecorationImage(
-                fit: BoxFit.cover,
-                image: NetworkImage(
-                    'https://i.pinimg.com/736x/4a/91/a6/4a91a6b4f09c7df99a6352db06f7a701.jpg'),
-                filterQuality: FilterQuality.high,
-              ),
-            ),
-          ),
-        ),
-      ],
-      options: CarouselOptions(
-          autoPlay: true, enlargeCenterPage: true, enableInfiniteScroll: true),
+        );
+      },
     );
   }
 }

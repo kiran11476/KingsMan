@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kingsman/view/screens/homepage.dart';
 import 'package:kingsman/view/screens/screen2_signup.dart';
 
 import 'package:kingsman/view/screens/widgets/background_image.dart';
+
 import 'package:kingsman/view/screens/widgets/widgets.dart';
 
 import 'widgets/textfeild.dart';
@@ -19,10 +19,9 @@ class LogInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
-    return CupertinoPageScaffold(
-        resizeToAvoidBottomInset: false,
-        navigationBar: kingsman,
-        child: SafeArea(
+    return Scaffold(
+        appBar: kingsman,
+        body: SafeArea(
           child: Stack(
             children: [
               const BackgroundImage(
@@ -54,7 +53,12 @@ class LogInScreen extends StatelessWidget {
                   CupertinoButton(
                     color: const Color.fromARGB(147, 227, 237, 229),
                     onPressed: () {
-                      Get.to(const HomePage());
+                      Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (ctx) => HomePage()));
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (ctx) => const HomePage()));
                     },
                     child: const Text(
                       "Sign In",
@@ -72,10 +76,8 @@ class LogInScreen extends StatelessWidget {
                         style: TextStyle(color: CupertinoColors.white),
                       ),
                       TextButton(
-                        onPressed: () {
-                          Get.to(SignUpPage());
-                        },
-                        child: Text(
+                        onPressed: () {},
+                        child: const Text(
                           'Sign In',
                           style: TextStyle(color: CupertinoColors.activeBlue),
                         ),

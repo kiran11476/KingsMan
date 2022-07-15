@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:kingsman/view/screens/widgets/background_image.dart';
@@ -13,9 +12,9 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-        navigationBar: kingsman,
-        child: SafeArea(
+    return Scaffold(
+        appBar: kingsman,
+        body: SafeArea(
             child: Stack(
           children: [
             const BackgroundImage(
@@ -63,9 +62,7 @@ class SignUpPage extends StatelessWidget {
                       style: TextStyle(color: CupertinoColors.white),
                     ),
                     TextButton(
-                      onPressed: () {
-                        Get.back();
-                      },
+                      onPressed: () {},
                       child: Text(
                         'Sign In',
                         style: TextStyle(color: CupertinoColors.activeBlue),
