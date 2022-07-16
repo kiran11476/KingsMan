@@ -17,6 +17,7 @@ class LogInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: CupertinoColors.systemGrey5,
         appBar: kingsman,
         body: SafeArea(
           child: Stack(
