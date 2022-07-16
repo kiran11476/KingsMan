@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kingsman/controller/cubit/bottom_nav_cubit.dart';
-import 'package:kingsman/view/screens/settings.dart';
-import 'package:kingsman/view/screens/ssssscreen.dart';
+import 'package:kingsman/view/screens/settings/settings.dart';
+import 'package:kingsman/view/screens/homepage/ssssscreen.dart';
 
-import 'package:kingsman/view/screens/wishlist.dart';
+import 'package:kingsman/view/screens/cart/wishlist.dart';
+
+import '../cart/wishlist.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -35,7 +37,7 @@ class HomePage extends StatelessWidget {
                 label: 'Home',
               ),
               BottomNavigationBarItem(
-                label: 'Add to cart',
+                label: ' cart',
                 icon: Icon(Icons.shopping_cart_outlined),
               ),
               BottomNavigationBarItem(

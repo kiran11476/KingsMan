@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kingsman/view/screens/product/productscreen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -12,7 +13,13 @@ class HomeScreen extends StatelessWidget {
     return SingleChildScrollView(
       child: SafeArea(
         child: Column(children: [
-          const Carousel(),
+          const CarouselHii(
+            width: 300,
+            reverse: true,
+            enlaegre: true,
+            padding: EdgeInsets.all(10.0),
+            bools: true,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -27,7 +34,7 @@ class HomeScreen extends StatelessWidget {
               ElevatedButton(
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
-                      Color.fromARGB(208, 64, 36, 125)),
+                      const Color.fromARGB(208, 64, 36, 125)),
                 ),
                 onPressed: () {},
                 child: const Text('Glasses'),
@@ -131,38 +138,44 @@ class HomeScreen extends StatelessWidget {
             scrollDirection: Axis.vertical,
             itemCount: 20,
             itemBuilder: (BuildContext context, int index) {
-              return Container(
-                  color: const Color.fromARGB(255, 255, 254, 254),
-                  height: 100,
-                  width: 50,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Stack(
-                        children: [
-                          const Image(
-                            image: NetworkImage(
-                                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj7Vmct8uCO4MTxe6SPOTUG3BvJ9ghxq-fxw&usqp=CAU'),
-                          ),
-                          Positioned(
-                            right: 10,
-                            child: IconButton(
-                                onPressed: () {},
-                                icon: const Icon(Icons.favorite)),
-                          )
-                        ],
-                      ),
-                      const Text(
-                        'Shoes Name',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18),
-                      ),
-                      const Text(
-                        'Price rs.30',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ));
+              return InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (ctx) => const ScreenProduct()));
+                },
+                child: Container(
+                    color: const Color.fromARGB(255, 255, 254, 254),
+                    height: 100,
+                    width: 50,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Stack(
+                          children: [
+                            const Image(
+                              image: NetworkImage(
+                                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj7Vmct8uCO4MTxe6SPOTUG3BvJ9ghxq-fxw&usqp=CAU'),
+                            ),
+                            Positioned(
+                              right: 10,
+                              child: IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.favorite)),
+                            )
+                          ],
+                        ),
+                        const Text(
+                          'Shoes Name',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        ),
+                        const Text(
+                          'Price rs.30',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    )),
+              );
             },
           )
         ]),
@@ -171,24 +184,33 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class Carousel extends StatelessWidget {
-  const Carousel({
-    Key? key,
-  }) : super(key: key);
-
+class CarouselHii extends StatelessWidget {
+  const CarouselHii(
+      {Key? key,
+      required this.bools,
+      required this.padding,
+      required this.enlaegre,
+      required this.reverse,
+      required this.width})
+      : super(key: key);
+  final bool bools;
+  final EdgeInsetsGeometry padding;
+  final bool enlaegre;
+  final bool reverse;
+  final double width;
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
       options: CarouselOptions(
-        autoPlay: true,
-        enlargeCenterPage: true,
-        enableInfiniteScroll: true,
+        autoPlay: bools,
+        enlargeCenterPage: enlaegre,
+        enableInfiniteScroll: reverse,
       ),
       items: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: padding,
           child: Container(
-            width: 400,
+            width: width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               image: const DecorationImage(

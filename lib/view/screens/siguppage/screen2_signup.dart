@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:kingsman/view/screens/widgets/background_image.dart';
-import 'package:kingsman/view/screens/widgets/textfeild.dart';
+
 import 'package:kingsman/view/screens/widgets/widgets.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -33,15 +33,45 @@ class SignUpPage extends StatelessWidget {
                   ),
                 ),
                 kheight20,
-                const PasswordField(hinttext: 'Name....'),
+                CupertinoTextFormFieldRow(
+                  placeholder: 'Enter your Email',
+                  decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(Radius.circular(10)),
+                      color: CupertinoColors.white,
+                      border: Border.all(color: CupertinoColors.white)),
+                ),
                 kheight20,
-                const PasswordField(hinttext: 'Mobile....'),
+                CupertinoTextFormFieldRow(
+                  placeholder: 'Enter your Email',
+                  decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(Radius.circular(10)),
+                      color: CupertinoColors.white,
+                      border: Border.all(color: CupertinoColors.white)),
+                ),
                 kheight20,
-                const PasswordField(hinttext: 'Email....'),
+                CupertinoTextFormFieldRow(
+                  placeholder: 'Enter your Email',
+                  decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(Radius.circular(10)),
+                      color: CupertinoColors.white,
+                      border: Border.all(color: CupertinoColors.white)),
+                ),
                 kheight20,
-                const PasswordField(hinttext: 'Password....'),
+                CupertinoTextFormFieldRow(
+                  placeholder: 'Enter your Email',
+                  decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(Radius.circular(10)),
+                      color: CupertinoColors.white,
+                      border: Border.all(color: CupertinoColors.white)),
+                ),
                 kheight20,
-                const PasswordField(hinttext: 'Confirm Password....'),
+                CupertinoTextFormFieldRow(
+                  placeholder: 'Enter your Email',
+                  decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(Radius.circular(10)),
+                      color: CupertinoColors.white,
+                      border: Border.all(color: CupertinoColors.white)),
+                ),
                 kheight20,
                 CupertinoButton(
                   color: const Color.fromARGB(147, 227, 237, 229),
@@ -62,7 +92,9 @@ class SignUpPage extends StatelessWidget {
                       style: TextStyle(color: CupertinoColors.white),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       child: Text(
                         'Sign In',
                         style: TextStyle(color: CupertinoColors.activeBlue),

@@ -28,6 +28,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   bloc: ^8.0.3
+  card_swiper: ^2.0.4
   carousel_slider: ^4.1.1
   cupertino_icons: ^1.0.5
   flutter:

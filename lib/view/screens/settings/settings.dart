@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kingsman/view/screens/userprofile.dart';
+import 'package:kingsman/view/screens/settings/userprofile.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 class ScreenSetting extends StatelessWidget {
@@ -22,14 +22,14 @@ class ScreenSetting extends StatelessWidget {
                     value: const Text('Your Orders'),
                   ),
                   SettingsTile.navigation(
-                    onPressed: (context) => Navigator.of(context)
-                        .pushReplacement(MaterialPageRoute(
-                            builder: (ctx) => const AddAddressPage())),
                     leading: const Icon(Icons.account_box_outlined),
                     title: const Text('Profile'),
                     value: const Text('profile'),
                   ),
                   SettingsTile.navigation(
+                    onPressed: (context) => Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (ctx) => const AddAddressPage())),
                     leading: const Icon(Icons.home),
                     title: const Text('Address'),
                     value: const Text('Address'),
