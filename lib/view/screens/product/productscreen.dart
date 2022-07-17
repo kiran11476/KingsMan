@@ -33,8 +33,9 @@ class BuyNow extends StatelessWidget {
         Container(
           alignment: Alignment.center,
           decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(5)),
-              color: Color.fromARGB(255, 88, 6, 2)),
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+            color: Color.fromARGB(255, 88, 6, 2),
+          ),
           height: 60,
           width: 200,
           child: Text(

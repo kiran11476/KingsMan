@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kingsman/view/screens/settings/userprofile.dart';
+import 'package:kingsman/view/screens/settings/addresss.dart';
+import 'package:kingsman/view/screens/wishlist/wishlist.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 class ScreenSetting extends StatelessWidget {
@@ -33,6 +34,14 @@ class ScreenSetting extends StatelessWidget {
                     leading: const Icon(Icons.home),
                     title: const Text('Address'),
                     value: const Text('Address'),
+                  ),
+                  SettingsTile.navigation(
+                    onPressed: (context) => Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (ctx) => const ScreenWish())),
+                    leading: const Icon(Icons.favorite_border),
+                    title: const Text('Wishlist'),
+                    value: const Text('Wishlists'),
                   ),
                 ],
               ),

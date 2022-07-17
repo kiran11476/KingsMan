@@ -1,13 +1,16 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../product/widget/bottomsheet.dart';
-
-class ScreenWishList extends StatelessWidget {
-  const ScreenWishList({Key? key}) : super(key: key);
+class ScreenWish extends StatelessWidget {
+  const ScreenWish({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: CupertinoColors.black,
+        title: const Text('KingsMan'),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -35,7 +38,6 @@ class ScreenWishList extends StatelessWidget {
           ]),
         ),
       ),
-      bottomSheet: const Bottomsheeet(),
     );
   }
 }
