@@ -159,7 +159,7 @@ class ProductFeild extends StatelessWidget {
                       'A contemporary style which plays with established codes, a creative universe where elegance rules.',
                       style: TextStyle(overflow: TextOverflow.clip),
                     ),
-                  )
+                  ),
                 ],
               ),
               IconButton(

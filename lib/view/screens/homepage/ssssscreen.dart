@@ -214,7 +214,7 @@ class CarouselHii extends StatelessWidget {
               image: const DecorationImage(
                 fit: BoxFit.cover,
                 image: NetworkImage(
-                    'https://i.pinimg.com/736x/4a/91/a6/4a91a6b4f09c7df99a6352db06f7a701.jpg'),
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxlrnXjcUM2OmKWYj8p2dQJCf2lsHM6_wmXQ&usqp=CAU'),
                 filterQuality: FilterQuality.high,
               ),
             ),
