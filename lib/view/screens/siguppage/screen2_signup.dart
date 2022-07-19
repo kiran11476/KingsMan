@@ -35,7 +35,7 @@ class SignUpPage extends StatelessWidget {
                 ),
                 kheight20,
                 CupertinoTextFormFieldRow(
-                  placeholder: 'Enter your Email',
+                  placeholder: 'Enter your Name',
                   decoration: BoxDecoration(
                       borderRadius: const BorderRadius.all(Radius.circular(10)),
                       color: CupertinoColors.white,
@@ -51,7 +51,7 @@ class SignUpPage extends StatelessWidget {
                 ),
                 kheight20,
                 CupertinoTextFormFieldRow(
-                  placeholder: 'Enter your Email',
+                  placeholder: 'Enter your Age',
                   decoration: BoxDecoration(
                       borderRadius: const BorderRadius.all(Radius.circular(10)),
                       color: CupertinoColors.white,
@@ -59,7 +59,7 @@ class SignUpPage extends StatelessWidget {
                 ),
                 kheight20,
                 CupertinoTextFormFieldRow(
-                  placeholder: 'Enter your Email',
+                  placeholder: 'Enter your Password',
                   decoration: BoxDecoration(
                       borderRadius: const BorderRadius.all(Radius.circular(10)),
                       color: CupertinoColors.white,
@@ -67,7 +67,7 @@ class SignUpPage extends StatelessWidget {
                 ),
                 kheight20,
                 CupertinoTextFormFieldRow(
-                  placeholder: 'Enter your Email',
+                  placeholder: ' confim your Password',
                   decoration: BoxDecoration(
                       borderRadius: const BorderRadius.all(Radius.circular(10)),
                       color: CupertinoColors.white,
@@ -82,13 +82,13 @@ class SignUpPage extends StatelessWidget {
                     style: TextStyle(color: CupertinoColors.white),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 100,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Do you have an account?',
                       style: TextStyle(color: CupertinoColors.white),
                     ),
@@ -96,7 +96,7 @@ class SignUpPage extends StatelessWidget {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      child: Text(
+                      child: const Text(
                         'Sign In',
                         style: TextStyle(color: CupertinoColors.activeBlue),
                       ),

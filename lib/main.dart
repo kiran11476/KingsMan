@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 
 import 'package:kingsman/controller/cubit/bottom_nav_cubit.dart';
 import 'package:kingsman/view/screens/signinpage/screen1_log.dart';
@@ -19,7 +20,7 @@ class MyAp extends StatelessWidget {
           create: (context) => BottomNavCubit(),
         )
       ],
-      child: const MaterialApp(
+      child: const GetMaterialApp(
           debugShowCheckedModeBanner: false, home: LogInScreen()),
     );
 
