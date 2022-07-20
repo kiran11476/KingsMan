@@ -28,5 +28,16 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs access to location in the background.
+	</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app needs access to location when in the background.
+	</string>
+	<key>NSLocationAlwaysAndWhenInUseUsage Description</key> 
+	<string> This app needs access to location when open and in the background.
+	</string>
+	<key>NSAppTransportSecurity</key>
+	<key>NSAllowsArbitraryLoads</key><true/>
 </dict>
 </plist>

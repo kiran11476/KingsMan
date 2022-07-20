@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kingsman/view/screens/settings/geography/geography.dart';
 
 import 'package:kingsman/view/screens/widgets/headingtext.dart';
 import 'package:kingsman/view/screens/widgets/textformfeild.dart';
@@ -25,24 +27,30 @@ class AddAddressPage extends StatelessWidget {
           padding: const EdgeInsets.all(15.0),
           child: ListView(
             shrinkWrap: false,
-            children: const [
-              HeadingText(headingText: 'Add Address'),
-              TextandFormFieldWidget(
+            children: [
+              const HeadingText(headingText: 'Add Address'),
+              const TextandFormFieldWidget(
                   headingText: 'Full Name', hintText: 'Enter your Name'),
-              TextandFormFieldWidget(
+              const TextandFormFieldWidget(
                   headingText: 'Mobile Number',
                   hintText: 'Enter your Mobile Number'),
-              TextandFormFieldWidget(
+              const TextandFormFieldWidget(
                   headingText: 'Pin Code', hintText: 'Enter your Pincode'),
-              TextandFormFieldWidget(
+              const TextandFormFieldWidget(
                   headingText: 'Flat,House No,Building Name',
                   hintText: 'Enter your House No,Building Name,Flat'),
-              TextandFormFieldWidget(
+              const TextandFormFieldWidget(
                   headingText: 'Road Name, Area , Colony',
                   hintText: 'Enter yourRoad Name, Area , Colony'),
-              TextandFormFieldWidget(
-                  headingText: 'Town/City', hintText: 'Enter your Town/City'),
-              TextandFormFieldWidget(
+              GestureDetector(
+                onTap: () {
+                  Get.to(const ScreenGeo());
+                },
+                child: const TextandFormFieldWidget(
+                    headingText: 'Select Location',
+                    hintText: 'Choose your Location'),
+              ),
+              const TextandFormFieldWidget(
                   headingText: 'State', hintText: 'Select the State'),
             ],
           ),

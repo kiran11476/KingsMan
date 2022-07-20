@@ -34,6 +34,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
+  geolocator: ^9.0.1
   get: ^4.6.5
   google_fonts: ^3.0.1
   settings_ui: ^2.0.2
